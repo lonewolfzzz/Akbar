@@ -88,7 +88,7 @@ export default function Services() {
     <section
       id="services"
       ref={ref}
-      className="select-none px-4 bg-[#1c1c1c] my-[10%] p-8 md:p-10 lg:p-12 rounded-2xl shadow-lg"
+      className="select-none px-4 sm:px-6 md:px-8 bg-[#1c1c1c] my-[10%] p-8 md:p-10 lg:p-12 rounded-2xl shadow-lg"
       aria-label="services"
     >
       <Heading title="services" />
