@@ -67,7 +67,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="select-none pb-20 pt-20 mt-20 rounded-2xl" style={{ height: '480px', backgroundColor: 'black' }}>
+    <section id="hero" className="select-none pb-20 pt-20 mt-20" style={{ height: '480px', backgroundColor: 'black' }}>
       <div className="flex flex-col justify-center">
         <div className="max-w-full flex flex-col items-center justify-center mb-4">
           <motion.h1

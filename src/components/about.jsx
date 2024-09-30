@@ -81,7 +81,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="select-none pt-2 bg-[#1c1c1c] rounded-2xl"
+      className="select-none pt-2 bg-black rounded-bl-2xl rounded-br-2xl"
     >
       <motion.div
         className="p-8 md:p-10 lg:p-12 rounded-2xl shadow-lg"
