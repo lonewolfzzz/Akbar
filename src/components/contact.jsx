@@ -42,10 +42,10 @@ export default function Contact() {
         {/* Left: Contact Form */}
         <div className="w-full">
           <AnimateOnScroll delay={0.2}>
-            <h3 className='text-3xl font-semibold leading-tight'>
+            <h3 className='text-3xl font-semibold leading-tight text-white'>
               Have an awesome idea? Let's bring it to life.
             </h3>
-            <p className='mt-4 text-3xl'>
+            <p className='mt-4 text-3xl text-white'>
               I am currently not available for freelance work. I am accepting new projects starting from February 2022.
             </p>
           </AnimateOnScroll>
@@ -115,7 +115,7 @@ export default function Contact() {
               >
                 <span className="relative">
                   <span className="absolute bottom-[0.4rem] h-1 w-0 bg-gray-200 opacity-90 duration-300 ease-out group-hover:w-full"></span>
-                  <span className="group-hover:text-gray-400 text-xl">
+                  <span className="group-hover:text-gray-400 text-xl text-white">
                     Send Message
                   </span>
                 </span>

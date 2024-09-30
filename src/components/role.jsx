@@ -41,25 +41,25 @@ export default function Role() {
       >
         {/* Teks dengan ukuran besar yang rata kiri */}
         <motion.h1
-          className="text-left text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-medium leading-tight"
+          className="text-left text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-medium leading-tight text-white"
           variants={itemVariants}
         >
           I create elevating digital
         </motion.h1>
         <motion.h1
-          className="text-left text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-medium leading-tight"
+          className="text-left text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-medium leading-tight text-white"
           variants={itemVariants}
         >
           experiences that inspire
         </motion.h1>
         <motion.h1
-          className="text-left text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-medium leading-tight"
+          className="text-left text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-medium leading-tight text-white"
           variants={itemVariants}
         >
           and connect with people
         </motion.h1>
         <motion.h1
-          className="text-left text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-medium leading-tight"
+          className="text-left text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-medium leading-tight text-white"
           variants={itemVariants}
         >
           through development and design.

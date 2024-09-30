@@ -39,6 +39,9 @@ function ProjectsUi({ name, img, alt, type, link, year, tools }) {
           className="h-8rem md:h-[8rem] lg:h-[16rem] w-screen duration-700 ease-in-out rounded-xl"
           src={img}
           alt={alt}
+          width="400"   // Sesuaikan dengan ukuran gambar sebenarnya
+          height="300"  // Sesuaikan dengan ukuran gambar sebenarnya
+          loading="lazy" // Add this attribute for lazy loading
         />
       </a>
       <div className="select-none mt-4 text-white">
@@ -142,7 +145,7 @@ export default function Projects() {
         >
           <ProjectsUi
             link="https://qr-pi-ivory.vercel.app"
-            img="./assets/abs1.png"
+            img="./assets/abs1.webp"
             alt="QR Generator mockup"
             name="QR Generator mockup"
             type="Web Design • Frontend Development"
@@ -159,7 +162,7 @@ export default function Projects() {
         >
           <ProjectsUi
             link="https://wolf-theta.vercel.app"
-            img="./assets/abs2.png"
+            img="./assets/abs2.webp"
             alt="Portofolio"
             name="Portofolio"
             type="Web Design • Frontend Development"
@@ -176,7 +179,7 @@ export default function Projects() {
         >
           <ProjectsUi
             link=""
-            img="./assets/abs1.png"
+            img="./assets/abs1.webp"
             alt="Instagram Login Page"
             name="Instagram Login Page"
             type="Web Design • Frontend Development"
@@ -193,7 +196,7 @@ export default function Projects() {
         >
           <ProjectsUi
             link=""
-            img="./assets/abs2.png"
+            img="./assets/abs2.webp"
             alt="WAVE SaaS"
             name="WAVE SaaS"
             type="Web Design • Frontend Development"
@@ -210,7 +213,7 @@ export default function Projects() {
         >
           <ProjectsUi
             link=""
-            img="./assets/abs1.png"
+            img="./assets/abs1.webp"
             alt="IBGroup website mockup"
             name="ibgroup website"
             type="Web Design • Frontend Development"
@@ -227,7 +230,7 @@ export default function Projects() {
         >
           <ProjectsUi
             link=""
-            img="./assets/abs2.png"
+            img="./assets/abs2.webp"
             alt="IBGroup website mockup"
             name="ibgroup website"
             type="Web Design • Frontend Development"

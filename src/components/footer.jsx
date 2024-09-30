@@ -11,11 +11,11 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row w-full items-center justify-between">
         <div className="flex space-x-1">
           <span>&copy;</span>
-          <span>2024</span>
-          <span className="font-extrabold uppercase">AKBAR IRAWAN</span>
+          <span className="text-white">2024</span>
+          <span className="font-extrabold uppercase text-white">AKBAR IRAWAN</span>
         </div>
         <div>
-          <span className="text-lg">Have fun build this site</span>
+          <span className="text-lg text-white">Have fun build this site</span>
         </div>
         <button
           onClick={toTop}
@@ -23,7 +23,7 @@ export default function Footer() {
           style={{ cursor: 'pointer' }} // Ensure the button shows a pointer on hover
         >
           <span
-            className="font-extrabold uppercase duration-200 transform group-hover:scale-110 group-hover:font-black transition-transform ease-in-out"
+            className="font-extrabold uppercase duration-200 transform group-hover:scale-110 group-hover:font-black transition-transform ease-in-out text-white"
           >
             BACK TO TOP
           </span>

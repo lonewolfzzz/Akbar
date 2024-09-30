@@ -99,9 +99,12 @@ export default function About() {
             variants={itemVariants}
           >
             <img
-              src="/assets/profile.jpg"
+              src="/assets/profile.webp"
               alt="profile"
               className="z-1 mt-10"
+              width="400"  // Sesuaikan dengan ukuran gambar sebenarnya
+              height="400" // Sesuaikan dengan ukuran gambar sebenarnya
+              loading="lazy" // Add this attribute for lazy loading
             />
           </motion.div>
 
