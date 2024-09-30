@@ -27,9 +27,10 @@ export default function Hero() {
     const glitchInterval = setInterval(() => {
       setTitles({
         title1: generateErrorText(iterations.title1, 'UI/UX Concept'),
-        title2: generateErrorText(iterations.title2, 'Frontend', true),
+        title2: generateErrorText(iterations.title2, 'Frontend', true),  // Pass true for title2
         title3: generateErrorText(iterations.title3, 'Developer')
       });
+      
 
       // Reduce the number of random error characters progressively
       if (iterations.title1 > 11) iterations.title1--;
@@ -51,43 +52,58 @@ export default function Hero() {
     const errorChars = '#@$%^&*!?';
     let result = '';
 
-    // Create random error characters for the title based on remaining iterations
-    for (let i = 0; i < Math.min(iterationsLeft, 14); i++) {
-      result += errorChars.charAt(Math.floor(Math.random() * errorChars.length));
+    if (isTitle2) {
+        const fixedPattern = 'FRONTEND-'; 
+        const randomPartLength = Math.min(5, Math.max(0, iterationsLeft - fixedPattern.length)); // Limit to 5 random chars
+
+        for (let i = 0; i < randomPartLength; i++) {
+            result += errorChars.charAt(Math.floor(Math.random() * errorChars.length));
+        }
+
+        result += fixedPattern;
+    } else {
+        for (let i = 0; i < Math.min(iterationsLeft, 14); i++) {
+            result += errorChars.charAt(Math.floor(Math.random() * errorChars.length));
+        }
     }
 
     const visibleText = originalText.slice(0, originalText.length - (iterationsLeft - originalText.length));
+    return visibleText + result.slice(visibleText.length);
+};
 
-    if (isTitle2) {
-      const completedText = visibleText.length >= originalText.length - 1 ? "Frontend" : visibleText;
-      return completedText;
-    }
 
-    return (visibleText + result.slice(visibleText.length)).padEnd(originalText.length + 14, ' ');
-  };
-
+  
+  
+  
+  
+  
+  
   return (
-    <section id="hero" className="select-none pb-20 pt-20 mt-20" style={{ height: '480px', backgroundColor: 'black' }}>
-      <div className="flex flex-col justify-center">
-        <div className="max-w-full flex flex-col items-center justify-center mb-4">
+    <section
+      id="hero"
+      className="select-none pb-20 pt-20 mt-20"
+      style={{ height: '470px', backgroundColor: 'black' }}
+    >
+      <div className="flex flex-col justify-center md:justify-center lg:justify-center h-full">
+        <div className="max-w-full flex flex-col items-center justify-center mb-2 md:mb-4">
           <motion.h1
-            initial={{ opacity: 1 }} // Ensure text is visible immediately
+            initial={{ opacity: 1 }}
             className="uppercase tracking-wides font-bold text-4xl md:text-7xl lg:text-8xl text-center text-white"
           >
             {titles.title1}
           </motion.h1>
         </div>
-        <div className="max-w-full flex flex-col items-center justify-center mb-4">
+        <div className="max-w-full flex flex-col items-center justify-center mb-2 md:mb-4">
           <motion.h1
-            initial={{ opacity: 1 }} // Ensure text is visible immediately
+            initial={{ opacity: 1 }}
             className="uppercase tracking-wides font-bold text-4xl md:text-7xl lg:text-8xl text-center stroke-none md:text-transparent lg:text-transparent stroke-text-dark"
           >
             {titles.title2}
           </motion.h1>
         </div>
-        <div className="max-w-full flex flex-col items-center justify-center">
+        <div className="max-w-full flex flex-col items-center justify-center mb-2 md:mb-4">
           <motion.h1
-            initial={{ opacity: 1 }} // Ensure text is visible immediately
+            initial={{ opacity: 1 }}
             className="uppercase tracking-wides font-bold text-4xl md:text-7xl lg:text-8xl text-center text-white"
           >
             {titles.title3}
