@@ -10,7 +10,7 @@ function Heading({ title }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <h1 className="w-fit text-3xl md:text-6xl lg:text-8xl font-medium uppercase text-black">
+      <h1 className="w-fit text-3xl md:text-6xl lg:text-8xl font-medium uppercase text-black px-5 sm:px-6 md:px-8">
         {title}
       </h1>
     </motion.div>
@@ -136,7 +136,7 @@ export default function Projects() {
       ></motion.div>
 
       <Heading title="Selected </> Projects" />
-      <div className="mt-10 grid grid-cols-1 gap-16 gap-y-10 md:grid-cols-2 gap-x-8">
+      <div className="mt-10 grid grid-cols-1 gap-16 gap-y-10 md:grid-cols-2 gap-x-8 px-4 sm:px-6 md:px-8">
         <motion.div
           className="bg-black rounded-2xl my-2 py-8 px-4"
           initial="hidden"
