@@ -13,7 +13,7 @@ import Footer from "@/components/footer";
 export default function Home() {
   const [bgColor, setBgColor] = useState("bg-black");
   const [navbarColor, setNavbarColor] = useState({ background: "bg-[#1c1c1c]", text: "text-white" });
-  const [logoSrc, setLogoSrc] = useState("/assets/logo.png");
+  const [logoSrc, setLogoSrc] = useState("/assets/logo.webp");
 
   useEffect(() => {
     // Scroll to the top on initial load
@@ -37,37 +37,37 @@ export default function Home() {
             case "hero":
               setBgColor("bg-black");
               setNavbarColor({ background: "bg-[#1c1c1c]", text: "text-white" });
-              setLogoSrc("/assets/logo.png");
+              setLogoSrc("/assets/logo.webp");
               break;
             case "about":
               setBgColor("bg-white");
               setNavbarColor({ background: "bg-[#1c1c1c]", text: "text-white" });
-              setLogoSrc("/assets/logo.png");
+              setLogoSrc("/assets/logo.webp");
               break;
             case "role":
               setBgColor("bg-black");
               setNavbarColor({ background: "bg-white", text: "text-[#1c1c1c]" });
-              setLogoSrc("/assets/logo2.png");
+              setLogoSrc("/assets/logo2.webp");
               break;
             case "services":
               setBgColor("bg-white");
               setNavbarColor({ background: "bg-[#1c1c1c]", text: "text-white" });
-              setLogoSrc("/assets/logo.png");
+              setLogoSrc("/assets/logo.webp");
               break;
             case "experience":
               setBgColor("bg-black");
               setNavbarColor({ background: "bg-white", text: "text-[#1c1c1c]" });
-              setLogoSrc("/assets/logo2.png");
+              setLogoSrc("/assets/logo2.webp");
               break;
             case "projects":
               setBgColor("bg-white");
               setNavbarColor({ background: "bg-[#1c1c1c]", text: "text-white" });
-              setLogoSrc("/assets/logo.png");
+              setLogoSrc("/assets/logo.webp");
               break;
             default:
               setBgColor("bg-black");
               setNavbarColor({ background: "bg-[#1c1c1c]", text: "text-white" });
-              setLogoSrc("/assets/logo.png");
+              setLogoSrc("/assets/logo.webp");
           }
         }
       });
