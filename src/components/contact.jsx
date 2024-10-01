@@ -46,7 +46,7 @@ export default function Contact() {
               Have an awesome idea? Let's bring it to life.
             </h3>
             <p className='mt-4 text-2xl text-white'>
-              I am currently not available for freelance work. I am accepting new projects starting from February 2022.
+              I am currently not available for freelance work. I am accepting new projects starting from September 2024.
             </p>
           </AnimateOnScroll>
 

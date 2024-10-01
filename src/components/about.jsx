@@ -24,57 +24,68 @@ const itemVariants = {
 };
 
 export default function About() {
-  // Trigger untuk animasi gambar
   const [imageRef, imageInView] = useInView({ triggerOnce: true, threshold: 0.1 });
-
-  // Trigger untuk animasi teks
   const [textRef, textInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const typedRef1 = useRef(null);
   const typedRef2 = useRef(null);
   const typedRef3 = useRef(null);
   
-  // State to manage the visibility of the TikTok link
   const [showTikTokLink, setShowTikTokLink] = useState(false);
 
   useEffect(() => {
+    let typed1, typed2, typed3;
+
     const options1 = {
       strings: ["I am an independent frontend developer, UI/UX designer, and creator based in Indonesia."],
-      typeSpeed: 50,
+      typeSpeed: 20,
       backSpeed: 25,
       backDelay: 1000,
       loop: false,
+      onStringTyped: () => {
+        // Start typing the second text once the first one is done
+        typed2 = new Typed(typedRef2.current, options2);
+      },
     };
 
     const options2 = {
       strings: ["I specialize in crafting elevated, intuitive, and minimalistic designs for startups and small businesses to help them stand out in the digital landscape with a powerful impact."],
-      typeSpeed: 50,
+      typeSpeed: 20,
       backSpeed: 25,
       backDelay: 1000,
       loop: false,
+      onStringTyped: () => {
+        // Start typing the third text once the second one is done
+        typed3 = new Typed(typedRef3.current, options3);
+      },
     };
 
     const options3 = {
       strings: ["When I am not developing or designing, I enjoy creating videos that show about my frontend development, productivity, and design on "],
-      typeSpeed: 50,
+      typeSpeed: 20,
       backSpeed: 25,
       backDelay: 1000,
       loop: false,
       showCursor: false,
       onStringTyped: () => {
-        // Show the TikTok link after the typing is complete
         setShowTikTokLink(true);
       },
     };
 
-    const typed1 = new Typed(typedRef1.current, options1);
-    const typed2 = new Typed(typedRef2.current, options2);
-    const typed3 = new Typed(typedRef3.current, options3);
+    // Start the first typing effect
+    typed1 = new Typed(typedRef1.current, options1);
 
     return () => {
-      typed1.destroy();
-      typed2.destroy();
-      typed3.destroy();
+      // Cleanup to avoid memory leaks
+      if (typed1) {
+        typed1.destroy();
+      }
+      if (typed2) {
+        typed2.destroy();
+      }
+      if (typed3) {
+        typed3.destroy();
+      }
     };
   }, []);
 
@@ -89,10 +100,10 @@ export default function About() {
         animate={imageInView || textInView ? 'visible' : 'hidden'}
         variants={containerVariants}
       >
-        <div className="flex flex-col items-start gap-8 md:flex-row lg:gap-10 pb-8">
+        <div className="flex flex-col md:flex-row gap-8 pb-8">
           {/* Image section */}
           <motion.div
-            className="top-28 overflow-hidden rounded-md md:sticky md:w-1/2"
+            className="w-full md:w-1/2 overflow-hidden rounded-md"
             ref={imageRef}
             initial="hidden"
             animate={imageInView ? 'visible' : 'hidden'}
@@ -102,15 +113,15 @@ export default function About() {
               src="/assets/profile.webp"
               alt="profile"
               className="z-1 mt-10"
-              width="400"  // Sesuaikan dengan ukuran gambar sebenarnya
-              height="400" // Sesuaikan dengan ukuran gambar sebenarnya
-              loading="lazy" // Add this attribute for lazy loading
+              width="500"
+              height="500"
+              loading="lazy"
             />
           </motion.div>
 
           {/* Text section */}
           <motion.div
-            className="top-20 sm:sticky md:top-28 lg:top-32 md:w-1/2"
+            className="flex flex-col justify-between w-full md:w-1/2"
             ref={textRef}
             initial="hidden"
             animate={textInView ? 'visible' : 'hidden'}
@@ -118,7 +129,7 @@ export default function About() {
           >
             <div className="w-full space-y-4 2xl:space-y-10">
               <motion.h3
-                className="text-5xl font-semibold leading-tight text-white"
+                className="mt-7 text-5xl font-semibold leading-tight text-white"
                 variants={itemVariants}
               >
                 A brief intro, about me?
@@ -131,18 +142,26 @@ export default function About() {
               </motion.p>
               <motion.p className="text-body-1 text-2xl text-gray-200" variants={itemVariants}>
                 <span ref={typedRef3} />
-                {showTikTokLink && ( // Show the TikTok link only after typing is complete
+                {showTikTokLink && (
                   <a
                     className="underline duration-300 ease-in-out hover:text-secondary-700"
-                    href="https://www.tiktok.com/@visualcode2077" // Replace with your TikTok URL
-                    target="_blank" // Open link in a new tab
-                    rel="noopener noreferrer" // Security improvement
+                    href="https://www.tiktok.com/@visualcode2077"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {' '}{' '}Tiktok 📸
                   </a>
                 )}
               </motion.p>
             </div>
+            {/* Download CV Button */}
+            <motion.a
+              href="/assets/cvakbar.pdf"
+              download
+              className="inline-block mt-4 px-6 py-2 text-lg font-semibold text-center text-white bg-[#1c1c1c] rounded-lg transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg transform hover:scale-105"
+            >
+              Download My CV
+            </motion.a>
           </motion.div>
         </div>
       </motion.div>

@@ -2,30 +2,59 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-// Animation Variants for Lines (growing and shrinking in a loop)
-const lineVariants = {
-  hidden: { opacity: 0, scaleX: 0, originX: 0 }, // Start with no width (scaleX 0)
+// Animation Variants for Lines (fade-in and slide-down)
+const lineAnimation = {
+  hidden: { opacity: 0, y: -20 }, // Start fully transparent and above position
   visible: (custom) => ({
     opacity: 1,
-    scaleX: 1, // Grow to full width
+    y: 0, // Slide down to original position
     transition: {
-      delay: custom * 0.3, // Staggered delay for each line
-      duration: 1, // Adjust duration for smoother effect
-      repeat: Infinity, // Loop the animation infinitely
-      repeatType: 'reverse', // Reverse the animation to shrink after it grows
-      ease: [0.5, 0, 0.5, 1], // Smooth easing function
+      delay: custom * 0.2, // Delay based on index
+      duration: 0.6, // Duration of each line's animation
+      ease: 'easeOut',
+    },
+  }),
+};
+
+// Animation Variants for smooth opacity effect for the section
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 }, // Start fully transparent and slightly below
+  visible: {
+    opacity: 1,
+    y: 0, // Move up to normal position
+    transition: {
+      duration: 2, // Smooth fade-in duration
+      ease: 'easeOut',
+    },
+  },
+};
+
+
+// Animation Variants for Lines (growing and shrinking in a loop)
+const lineVariants = {
+  hidden: { opacity: 0, scaleX: 0, originX: 0 },
+  visible: (custom) => ({
+    opacity: 1,
+    scaleX: 1,
+    transition: {
+      delay: custom * 0.3,
+      duration: 1,
+      repeat: Infinity,
+      repeatType: 'reverse',
+      ease: [0.5, 0, 0.5, 1],
+      repeatDelay: 7,
     },
   }),
 };
 
 // Animation Variants for Text in Left Column (fade-in and slide-up)
 const textLeftVariants = {
-  hidden: { opacity: 0, y: 50 }, // Text starts lower and hidden
+  hidden: { opacity: 0, y: 50 },
   visible: (custom) => ({
     opacity: 1,
     y: 0,
     transition: {
-      delay: custom * 0.2, // Delay each text item to appear one by one
+      delay: custom * 0.2,
       duration: 0.5,
     },
   }),
@@ -33,12 +62,12 @@ const textLeftVariants = {
 
 // Animation Variants for Text in Right Column (fade-in and slide-up)
 const textRightVariants = {
-  hidden: { opacity: 0, y: 50 }, // Text starts lower and hidden
+  hidden: { opacity: 0, y: 50 },
   visible: (custom) => ({
     opacity: 1,
     y: 0,
     transition: {
-      delay: custom * 0.2, // Delay each text item to appear one by one
+      delay: custom * 0.2,
       duration: 0.5,
     },
   }),
@@ -69,6 +98,28 @@ function LineGroup({ height, widths }) {
   );
 }
 
+// Component for displaying animated lines
+function LinesAboveSection() {
+  const lineHeights = [2, 4, 6, 8, 10, 12, 14, 16, 32, 64, 96, 144]; // Heights of the lines
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 }); // Detect when in view
+
+  return (
+    <div ref={ref} className="lines-container w-full h-auto flex flex-col space-y-2">
+      {lineHeights.map((height, index) => (
+        <motion.div
+          key={index}
+          className="w-full bg-[#1c1c1c] rounded-tl-2xl rounded-tr-2xl"
+          style={{ height: `${height}px` }}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          variants={lineAnimation}
+          custom={index} // Each line has its own delay
+        />
+      ))}
+    </div>
+  );
+}
+
 // Heading Component with Text Animation
 function Heading({ title }) {
   return (
@@ -76,8 +127,7 @@ function Heading({ title }) {
       className="px-10 md:px-0 lg:px-0 w-fit text-4xl md:text-6xl lg:text-8xl font-medium uppercase text-white"
       initial="hidden"
       animate="visible"
-      variants={textLeftVariants}
-      custom={0}
+      variants={sectionVariants} // Smooth opacity animation for the heading
     >
       {title}
     </motion.h1>
@@ -94,6 +144,7 @@ function ServiceUi({ title, description, items, lineSizes }) {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-24"
+      variants={sectionVariants} // Add animation for the entire section
     >
       {/* Left Column - Text */}
       <motion.div className="space-y-1">
@@ -162,30 +213,40 @@ export default function Services() {
   ];
 
   return (
-    <section
-      className="select-none px-4 sm:px-6 md:px-8 bg-[#1c1c1c] my-[10%] p-8 md:p-10 lg:p-12 rounded-2xl shadow-lg"
-      aria-label="services"
-    >
-      {/* Heading */}
-      <Heading title="services" />
 
-      <div className="space-y-14">
-        {/* Expertise section */}
-        <ServiceUi
-          title="My expertises."
-          description="I focus on all things design and web related."
-          items={expertiseItems}
-          lineSizes={expertiseLineSizes}
-        />
+    <>
+      {/* Menambahkan garis-garis sebelum section */}
+      <LinesAboveSection />
 
-        {/* Toolbox section */}
-        <ServiceUi
-          title="My digital tool box."
-          description="These are my go-to tech stack to make any projects happen."
-          items={toolBoxItems}
-          lineSizes={toolBoxLineSizes}
-        />
-      </div>
-    </section>
+      <motion.section
+        className="select-none px-4 sm:px-6 md:px-8 bg-[#1c1c1c] my-[0.5rem] p-8 md:p-10 lg:p-12 rounded-2xl shadow-lg"
+        aria-label="services"
+        id="services"
+        initial="hidden"
+        animate="visible"
+        variants={sectionVariants} // Add fade-in animation to section
+      >
+        {/* Heading */}
+        <Heading title="services" />
+
+        <div className="space-y-14">
+          {/* Expertise section */}
+          <ServiceUi
+            title="My expertises."
+            description="I focus on all things design and web related."
+            items={expertiseItems}
+            lineSizes={expertiseLineSizes}
+          />
+
+          {/* Toolbox section */}
+          <ServiceUi
+            title="My digital tool box."
+            description="These are my go-to tech stack to make any projects happen."
+            items={toolBoxItems}
+            lineSizes={toolBoxLineSizes}
+          />
+        </div>
+      </motion.section>
+    </>
   );
 }

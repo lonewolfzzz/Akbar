@@ -32,7 +32,7 @@ export default function Navbar({ navbarColor, logoSrc }) {
           {/* "Let's Talk" button */}
           <div className="flex items-center">
             <a
-              href=""
+              href="https://wa.me/085856239092"
               className={`group relative ${navbarColor.background === 'bg-white' ? 'bg-black text-white' : 'bg-white text-black'} px-2 py-1 sm:px-4 sm:py-2 rounded-3xl hover:bg-black hover:text-white duration-300 ease-out`}
             >
               <span className="absolute bottom-[1rem] md:bottom-[1.2rem] lg:bottom-[1.2rem] h-[0.185em] w-0 rounded-full bg-white opacity-80 duration-300 ease-out group-hover:w-[74px]"></span>

@@ -97,7 +97,7 @@ export default function Projects() {
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={lineVariants}
-        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.8 }} // Delay lebih lama
+        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.8}} // Delay lebih lama
       ></motion.div>
       <motion.div
         className="w-full h-[6rem] bg-black my-4"
