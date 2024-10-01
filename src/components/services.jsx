@@ -108,13 +108,14 @@ function LinesAboveSection() {
       {lineHeights.map((height, index) => (
         <motion.div
           key={index}
-          className="w-full bg-[#1c1c1c] rounded-tl-2xl rounded-tr-2xl"
+          className="w-full bg-[#1c1c1c] rounded-tl-2xl rounded-tr-2xl overflow-hidden"
           style={{ height: `${height}px` }}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
           variants={lineAnimation}
-          custom={index} // Each line has its own delay
-        />
+          custom={index} >
+          <p className='uppercase text-4xl md:text-6xl lg:text-8xl text-white px-14 md:px-8 lg:px-8'>SERVICES</p>
+          </motion.div>
       ))}
     </div>
   );
@@ -149,7 +150,7 @@ function ServiceUi({ title, description, items, lineSizes }) {
       {/* Left Column - Text */}
       <motion.div className="space-y-1">
         <motion.h3
-          className="px-10 md:px-0 lg:px-0 text-2xl md:text-4xl lg:text-4xl 2xl:text-7xl font-semibold leading-tight text-white"
+          className="px-10 md:px-0 lg:px-0 text-3xl md:text-4xl lg:text-4xl 2xl:text-7xl font-semibold leading-tight text-white"
           variants={textLeftVariants}
           custom={0}
         >
@@ -166,7 +167,7 @@ function ServiceUi({ title, description, items, lineSizes }) {
 
       {/* Right Column - List of Items */}
       <motion.div className="space-y-8">
-        <ul className="list-none text-left text-3xl md:text-4xl lg:text-6xl text-gray-300 space-y-2">
+        <ul className="list-none text-left text-2xl md:text-4xl lg:text-6xl text-gray-300 space-y-2">
           {items.map((item, index) => (
             <li key={index} className="relative flex items-center">
               {/* LineGroup with staggered animations */}
@@ -216,10 +217,10 @@ export default function Services() {
 
     <>
       {/* Menambahkan garis-garis sebelum section */}
-      <LinesAboveSection />
+      <LinesAboveSection/>
 
       <motion.section
-        className="select-none px-4 sm:px-6 md:px-8 bg-[#1c1c1c] my-[0.5rem] p-8 md:p-10 lg:p-12 rounded-2xl shadow-lg"
+        className="select-none pb-4 px-4 sm:px-6 md:px-8 bg-[#1c1c1c] my-[0.5rem] rounded-2xl shadow-lg"
         aria-label="services"
         id="services"
         initial="hidden"

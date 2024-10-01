@@ -10,7 +10,7 @@ function Heading({ title }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <h1 className="w-fit text-3xl md:text-6xl lg:text-8xl font-medium uppercase text-black px-5 sm:px-6 md:px-8">
+      <h1 className="w-fit text-3xl md:text-6xl lg:text-8xl font-medium select-none uppercase text-black px-5 sm:px-6 md:px-8">
         {title}
       </h1>
     </motion.div>
@@ -18,7 +18,7 @@ function Heading({ title }) {
 }
 
 // Project Card Component
-function ProjectsUi({ name, img, alt, type, link, year, tools }) {
+function ProjectsUi({ name, img, alt, type, link, year, tools, index }) {
   return (
     <motion.div
       className="group inline-block overflow-hidden duration-200 ease-linear"
@@ -43,6 +43,10 @@ function ProjectsUi({ name, img, alt, type, link, year, tools }) {
           height="300"  // Sesuaikan dengan ukuran gambar sebenarnya
           loading="lazy" // Add this attribute for lazy loading
         />
+        {/* Overlay Text */}
+        <div className="absolute top-2 left-2 text-white text-4xl font-bold bg-black bg-opacity-50 px-2 py-1 rounded-lg">
+          ://{(index + 1).toString().padStart(2, '0')}
+        </div>
       </a>
       <div className="select-none mt-4 text-white">
         <div className="flex space-x-2 mb-3">
@@ -79,166 +83,225 @@ export default function Projects() {
     <section id="projects" aria-label="projects" ref={ref}>
       {/* Garis dengan animasi dari atas dengan delay */}
       <motion.div
-        className="w-full h-[10rem] bg-black my-4"
+        className="w-full h-[144px] bg-black my-2 rounded-2xl"
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={lineVariants}
         transition={{ duration: 0.5, ease: 'easeOut', delay: 0 }}
-      ></motion.div>
+      >
+        <p className='uppercase select-none text-white text-4xl md:text-6xl lg:text-8xl px-8'>NEXT//</p>
+      </motion.div>
       <motion.div
-        className="w-full h-[8rem] bg-black my-4"
+        className="w-full h-[96px] bg-black my-2 rounded-2xl"
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={lineVariants}
-        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4 }} // Delay ditambah
-      ></motion.div>
+        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }} // Delay ditambah
+      >
+        <p className='uppercase select-none text-white text-4xl md:text-6xl lg:text-8xl px-8'>NEXT//</p>
+      </motion.div>
       <motion.div
-        className="w-full h-[7rem] bg-black my-4"
+        className="w-full h-[64px] bg-black my-2 rounded-2xl"
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={lineVariants}
-        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.8}} // Delay lebih lama
-      ></motion.div>
+        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.4}} // Delay lebih lama
+      >
+        <p className='uppercase select-none text-white text-4xl md:text-6xl lg:text-8xl px-8'>NEXT//</p>
+      </motion.div>
       <motion.div
-        className="w-full h-[6rem] bg-black my-4"
+        className="w-full h-[32px] bg-black my-2 rounded-2xl"
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+        variants={lineVariants}
+        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
+      >
+        <p className='uppercase select-none text-white text-4xl md:text-6xl lg:text-8xl px-8'>NEXT//</p>
+      </motion.div>
+      <motion.div
+        className="w-full h-[16px] bg-black my-2 rounded-2xl"
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+        variants={lineVariants}
+        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.8 }}
+      >
+        <p className='uppercase select-none text-white text-4xl md:text-6xl lg:text-8xl px-8'>NEXT//</p>
+      </motion.div>
+      <motion.div
+        className="w-full h-[14px] bg-black my-2 rounded-2xl"
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+        variants={lineVariants}
+        transition={{ duration: 0.5, ease: 'easeOut', delay: 1 }}
+      >
+        <p className='uppercase select-none text-white text-4xl md:text-6xl lg:text-8xl px-8'>NEXT//</p>
+      </motion.div>
+      <motion.div
+        className="w-full h-[12px] bg-black my-2 rounded-2xl"
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={lineVariants}
         transition={{ duration: 0.5, ease: 'easeOut', delay: 1.2 }}
-      ></motion.div>
+      >
+        <p className='uppercase select-none text-white text-4xl md:text-6xl lg:text-8xl px-8'>NEXT//</p>
+      </motion.div>
       <motion.div
-        className="w-full h-[4rem] bg-black my-4"
+        className="w-full h-[10px] bg-black my-2 rounded-2xl"
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+        variants={lineVariants}
+        transition={{ duration: 0.5, ease: 'easeOut', delay: 1.4 }}
+      >
+        <p className='uppercase select-none text-white text-4xl md:text-6xl lg:text-8xl px-8'>NEXT//</p>
+      </motion.div>
+      <motion.div
+        className="w-full h-[8px] bg-black my-2 rounded-2xl"
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={lineVariants}
         transition={{ duration: 0.5, ease: 'easeOut', delay: 1.6 }}
-      ></motion.div>
+      >
+        <p className='uppercase select-none text-white text-4xl md:text-6xl lg:text-8xl px-8'>NEXT//</p>
+      </motion.div>
       <motion.div
-        className="w-full h-[2rem] bg-black my-4"
+        className="w-full h-[6px] bg-black my-2 rounded-2xl"
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+        variants={lineVariants}
+        transition={{ duration: 0.5, ease: 'easeOut', delay: 1.8 }}
+      >
+        <p className='uppercase select-none text-white text-4xl md:text-6xl lg:text-8xl px-8'>NEXT//</p>
+      </motion.div>
+      <motion.div
+        className="w-full h-[4px] bg-black my-2 rounded-2xl"
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={lineVariants}
         transition={{ duration: 0.5, ease: 'easeOut', delay: 2 }}
-      ></motion.div>
+      >
+        <p className='uppercase select-none text-white text-4xl md:text-6xl lg:text-8xl px-8'>NEXT//</p>
+      </motion.div>
       <motion.div
-        className="w-full h-[1rem] bg-black my-4"
+        className="w-full h-[2px] bg-black my-2 rounded-2xl"
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={lineVariants}
-        transition={{ duration: 0.5, ease: 'easeOut', delay: 2.4 }}
-      ></motion.div>
-      <motion.div
-        className="w-full h-[1rem] bg-black my-4"
-        initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
-        variants={lineVariants}
-        transition={{ duration: 0.5, ease: 'easeOut', delay: 2.8 }}
-      ></motion.div>
+        transition={{ duration: 0.5, ease: 'easeOut', delay: 2.2 }}
+      >
+        <p className='uppercase select-none text-white text-4xl md:text-6xl lg:text-8xl px-8'>NEXT//</p>
+      </motion.div>
 
       <Heading title="Selected </> Projects" />
-      <div className="mt-10 grid grid-cols-1 gap-16 gap-y-10 md:grid-cols-2 gap-x-8 px-4 sm:px-6 md:px-8">
-        <motion.div
-          className="bg-black rounded-2xl my-2 py-8 px-4"
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          transition={{ staggerChildren: 0.2 }}
-        >
-          <ProjectsUi
-            link="https://qr-pi-ivory.vercel.app"
-            img="./assets/abs1.webp"
-            alt="QR Generator mockup"
-            name="QR Generator mockup"
-            type="Web Design • Frontend Development"
-            year="2024"
-            tools="HTML • JavaScript • CSS"
-          />
-        </motion.div>
+        <div className="mt-10 grid grid-cols-1 gap-16 gap-y-10 md:grid-cols-2 gap-x-8 px-4 sm:px-6 md:px-8">
+          <motion.div
+            className="bg-black rounded-2xl my-2 py-8 px-4"
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            transition={{ staggerChildren: 0.2 }}
+          >
+            <ProjectsUi
+              link="https://qr-pi-ivory.vercel.app"
+              img="./assets/abs1.webp"
+              alt="QR Generator mockup"
+              name="QR Generator mockup"
+              type="Web Design • Frontend Development"
+              year="2024"
+              tools="HTML • JavaScript • CSS"
+              index={0} // Tambahkan index secara manual
+            />
+          </motion.div>
 
-        <motion.div
-          className="bg-black rounded-2xl my-2 py-8 px-4"
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          transition={{ staggerChildren: 0.2 }}
-        >
-          <ProjectsUi
-            link="https://wolf-theta.vercel.app"
-            img="./assets/abs2.webp"
-            alt="Portofolio"
-            name="Portofolio"
-            type="Web Design • Frontend Development"
-            year="2024"
-            tools="NextJS • TailwindCSS • React • TypeScript"
-          />
-        </motion.div>
+          <motion.div
+            className="bg-black rounded-2xl my-2 py-8 px-4"
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            transition={{ staggerChildren: 0.2 }}
+          >
+            <ProjectsUi
+              link="https://wolf-theta.vercel.app"
+              img="./assets/abs2.webp"
+              alt="Portofolio"
+              name="Portofolio"
+              type="Web Design • Frontend Development"
+              year="2024"
+              tools="NextJS • TailwindCSS • React • TypeScript"
+              index={1} // Tambahkan index secara manual
+            />
+          </motion.div>
 
-        <motion.div
-          className="bg-black rounded-2xl my-2 py-8 px-4"
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          transition={{ staggerChildren: 0.2 }}
-        >
-          <ProjectsUi
-            link=""
-            img="./assets/abs1.webp"
-            alt="Instagram Login Page"
-            name="Instagram Login Page"
-            type="Web Design • Frontend Development"
-            year="2024"
-            tools="HTML • JavaScript • CSS"
-          />
-        </motion.div>
+          <motion.div
+            className="bg-black rounded-2xl my-2 py-8 px-4"
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            transition={{ staggerChildren: 0.2 }}
+          >
+            <ProjectsUi
+              link=""
+              img="./assets/abs1.webp"
+              alt="Instagram Login Page"
+              name="Instagram Login Page"
+              type="Web Design • Frontend Development"
+              year="2024"
+              tools="HTML • JavaScript • CSS"
+              index={2} // Tambahkan index secara manual
+            />
+          </motion.div>
 
-        <motion.div
-          className="bg-black rounded-2xl my-2 py-8 px-4"
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          transition={{ staggerChildren: 0.2 }}
-        >
-          <ProjectsUi
-            link=""
-            img="./assets/abs2.webp"
-            alt="WAVE SaaS"
-            name="WAVE SaaS"
-            type="Web Design • Frontend Development"
-            year="2024"
-            tools="NextJS • TypeScript • Framer Motion"
-          />
-        </motion.div>
+          <motion.div
+            className="bg-black rounded-2xl my-2 py-8 px-4"
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            transition={{ staggerChildren: 0.2 }}
+          >
+            <ProjectsUi
+              link=""
+              img="./assets/abs2.webp"
+              alt="WAVE SaaS"
+              name="WAVE SaaS"
+              type="Web Design • Frontend Development"
+              year="2024"
+              tools="NextJS • TypeScript • Framer Motion"
+              index={3} // Tambahkan index secara manual
+            />
+          </motion.div>
 
-        <motion.div
-          className="bg-black rounded-2xl my-2 py-8 px-4"
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          transition={{ staggerChildren: 0.2 }}
-        >
-          <ProjectsUi
-            link=""
-            img="./assets/abs1.webp"
-            alt="IBGroup website mockup"
-            name="ibgroup website"
-            type="Web Design • Frontend Development"
-            year="2023"
-            tools="HTML • TailwindCSS • JavaScript • Figma"
-          />
-        </motion.div>
+          <motion.div
+            className="bg-black rounded-2xl my-2 py-8 px-4"
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            transition={{ staggerChildren: 0.2 }}
+          >
+            <ProjectsUi
+              link=""
+              img="./assets/abs1.webp"
+              alt="IBGroup website mockup"
+              name="ibgroup website"
+              type="Web Design • Frontend Development"
+              year="2023"
+              tools="HTML • TailwindCSS • JavaScript • Figma"
+              index={4} // Tambahkan index secara manual
+            />
+          </motion.div>
 
-        <motion.div
-          className="bg-black rounded-2xl my-2 py-8 px-4"
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          transition={{ staggerChildren: 0.2 }}
-        >
-          <ProjectsUi
-            link=""
-            img="./assets/abs2.webp"
-            alt="IBGroup website mockup"
-            name="ibgroup website"
-            type="Web Design • Frontend Development"
-            year="2023"
-            tools="HTML • TailwindCSS • JavaScript • Figma"
-          />
-        </motion.div>
-      </div>
+          <motion.div
+            className="bg-black rounded-2xl my-2 py-8 px-4"
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            transition={{ staggerChildren: 0.2 }}
+          >
+            <ProjectsUi
+              link=""
+              img="./assets/abs2.webp"
+              alt="IBGroup website mockup"
+              name="ibgroup website"
+              type="Web Design • Frontend Development"
+              year="2023"
+              tools="HTML • TailwindCSS • JavaScript • Figma"
+              index={5} // Tambahkan index secara manual
+            />
+          </motion.div>
+        </div>
+
     </section>
   );
 }

@@ -12,12 +12,12 @@ export default function Footer() {
         {/* Centered on mobile */}
         <div className=" hidden md:flex lg:flex items-center md:flex-row md:space-x-1">
           <span>&copy;</span>
-          <span className="text-white">2024</span>
-          <span className="font-extrabold uppercase text-white">AKBAR IRAWAN</span>
+          <span className="text-white select-none">2024</span>
+          <span className="font-extrabold uppercase text-white select-none">AKBAR IRAWAN</span>
         </div>
 
         <div>
-          <span className=" text-lg text-white text-center">Have fun build this site</span>
+          <span className=" text-lg text-white text-center select-none">Have fun build this site</span>
         </div>
 
         <button
