@@ -90,15 +90,21 @@ export default function Experience() {
       <div className="space-y-14">
         {/* Experience items with a delay */}
         <ExperienceUi
-          title="Internship."
-          description="I am relied upon to handle the end-to-end development of e-commerce websites, covering both the frontend and backend aspects. My expertise ensures the creation of seamless online shopping experiences, integrating user-friendly interfaces with robust backend functionalities. Clients trust my commitment to delivering reliable, secure, and scalable e-commerce solutions tailored to their specific requirements."
+          title="Work."
+          description="As a frontend developer specialize , I focus on creating seamless, intuitive experiences that captivate users from the moment they land on a website. I prioritize clean, responsive designs that work effortlessly across devices, ensuring that every visitor can navigate and interact with the site with ease. By leveraging the latest technologies and design trends, I build dynamic product displays, smooth checkout flows, and interactive features that keep users engaged. I understand the importance of speed, accessibility, and security in e-commerce, and my frontend development approach ensures that websites are not only visually appealing but also highly performant and secure."
           inView={inView}
+        />
+        <ExperienceUi
+          title="Internship."
+          description="I am relied upon to handle the end-to-end development of government izol malang kota website, covering both the frontend and backend aspects. My expertise ensures integrating user-friendly interfaces with robust backend functionalities. Clients trust my commitment to delivering reliable, secure, and scalable government solutions tailored to their specific requirements."
+          inView={inView}
+          delay={2} // Add delay to the second experience
         />
         <ExperienceUi
           title="Freelance."
           description="I am relied upon to handle development of portfolio websites, covering frontend aspects. My expertise ensures website berjalan dengan lancar, integrating user-friendly interfaces. Clients trust my commitment to delivering reliable, secure, and scalable portfolio website solutions tailored to their specific requirements."
           inView={inView}
-          delay={1.5} // Add delay to the second experience
+          delay={4} // Add delay to the third experience
         />
       </div>
     </section>

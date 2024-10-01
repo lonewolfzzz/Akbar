@@ -236,7 +236,7 @@ export default function Projects() {
             transition={{ staggerChildren: 0.2 }}
           >
             <ProjectsUi
-              link=""
+              // link=""
               img="./assets/abs1.webp"
               alt="Instagram Login Page"
               name="Instagram Login Page"
@@ -254,10 +254,10 @@ export default function Projects() {
             transition={{ staggerChildren: 0.2 }}
           >
             <ProjectsUi
-              link=""
+              link="https://github.com/lonewolfzzz/wave"
               img="./assets/abs2.webp"
               alt="WAVE SaaS"
-              name="WAVE SaaS"
+              name="WAVE SaaS in Development"
               type="Web Design • Frontend Development"
               year="2024"
               tools="NextJS • TypeScript • Framer Motion"
@@ -272,13 +272,13 @@ export default function Projects() {
             transition={{ staggerChildren: 0.2 }}
           >
             <ProjectsUi
-              link=""
+              link="https://github.com/lonewolfzzz/Elliot-Landing-Page"
               img="./assets/abs1.webp"
-              alt="IBGroup website mockup"
-              name="ibgroup website"
+              alt="Elliot Landing Page"
+              name="Elliot Landing Page"
               type="Web Design • Frontend Development"
-              year="2023"
-              tools="HTML • TailwindCSS • JavaScript • Figma"
+              year="2024"
+              tools="HTML • CSS • JavaScript"
               index={4} // Tambahkan index secara manual
             />
           </motion.div>
@@ -290,13 +290,13 @@ export default function Projects() {
             transition={{ staggerChildren: 0.2 }}
           >
             <ProjectsUi
-              link=""
+              link="https://github.com/lonewolfzzz/porto"
               img="./assets/abs2.webp"
-              alt="IBGroup website mockup"
-              name="ibgroup website"
+              alt="First Portofolio"
+              name="First Portofolio"
               type="Web Design • Frontend Development"
-              year="2023"
-              tools="HTML • TailwindCSS • JavaScript • Figma"
+              year="2024"
+              tools="HTML • CSS • Javacript"
               index={5} // Tambahkan index secara manual
             />
           </motion.div>
