@@ -40,12 +40,12 @@ export default function Contact() {
       
       <div className='grid grid-cols-1 md:grid-cols-[2fr,1fr] gap-8'> {/* Ubah ke grid-cols-1 di mobile */}
         {/* Left: Contact Form */}
-        <div className="w-full">
+        <div className="w-full mt-10">
           <AnimateOnScroll delay={0.2}>
-            <h3 className='text-3xl font-semibold leading-tight text-white'>
+            <h3 className='text-2xl font-semibold leading-tight text-white'>
               Have an awesome idea? Let's bring it to life.
             </h3>
-            <p className='mt-4 text-3xl text-white'>
+            <p className='mt-4 text-2xl text-white'>
               I am currently not available for freelance work. I am accepting new projects starting from February 2022.
             </p>
           </AnimateOnScroll>
@@ -103,7 +103,7 @@ export default function Contact() {
                   ></textarea>
                   <label
                     htmlFor="message"
-                    className="absolute top-3 -z-10 origin-[0] -translate-y-8 scale-75 transform text-2xl text-gray-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75"
+                    className="absolute top-3 -z-10 origin-[0] -translate-y-8 scale-75 transform text-2xl text-gray-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-8 peer-focus:scale-75 px-4"
                   >
                     Your message
                   </label>
@@ -128,10 +128,10 @@ export default function Contact() {
         <AnimateOnScroll delay={1}>
           <div className="w-full grid gap-y-8 text-gray-400">
             <div className="space-y-3">
-              <h4 className="text-3xl font-semibold">Contact Details</h4>
+              <h4 className="text-2xl font-semibold">Contact Details</h4>
               <a
                 href="mailto:akbarirawnn@gmail.com"
-                className="group relative w-fit cursor-pointer text-2xl"
+                className="group relative w-fit cursor-pointer text-xl"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -141,7 +141,7 @@ export default function Contact() {
             </div>
             
             <div className="space-y-3">
-              <h4 className="text-3xl font-semibold">My Digital Spaces</h4>
+              <h4 className="text-2xl font-semibold">My Digital Spaces</h4>
               <div className="flex flex-col space-y-3">
                 <a
                   href="https://www.tiktok.com/@visualcode2077"
@@ -183,8 +183,8 @@ export default function Contact() {
             </div>
             
             <div className="space-y-3">
-              <h4 className="text-3xl font-semibold">Location</h4>
-              <p className="text-2xl">
+              <h4 className="text-2xl font-semibold">Location</h4>
+              <p className="text-xl">
                 Indonesia <br /> {time}
               </p>
             </div>
