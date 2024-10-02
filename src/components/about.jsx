@@ -156,7 +156,7 @@ export default function About() {
             </div>
             {/* Download CV Button */}
             <motion.a
-              href="/assets/cvakbar.pdf"
+              href="/assets/cv-akbar.pdf"
               download
               className="inline-block mt-4 px-6 py-2 text-lg font-semibold text-center text-white bg-[#1c1c1c] rounded-lg transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:shadow-lg transform hover:scale-105"
             >
