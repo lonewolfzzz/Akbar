@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Typed from 'typed.js';
 
+
 // Animation Variants
 const containerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -115,7 +116,7 @@ export default function About() {
               className="z-1 mt-10"
               width="500"
               height="500"
-              loading="lazy"
+              
             />
           </motion.div>
 
