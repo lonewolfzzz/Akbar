@@ -89,6 +89,7 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 1 }}
             className="uppercase tracking-wides font-bold text-4xl md:text-7xl lg:text-8xl text-center text-white"
+            style={{ minHeight: '100px' }} // Tentukan tinggi tetap
           >
             {titles.title1}
           </motion.h1>
@@ -97,6 +98,7 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 1 }}
             className="uppercase tracking-wides font-bold text-4xl md:text-7xl lg:text-8xl text-center stroke-none md:text-transparent lg:text-transparent stroke-text-dark"
+            style={{ minHeight: '100px' }} // Tentukan tinggi tetap
           >
             {titles.title2}
           </motion.h1>
@@ -105,6 +107,7 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 1 }}
             className="uppercase tracking-wides font-bold text-4xl md:text-7xl lg:text-8xl text-center text-white"
+            style={{ minHeight: '100px' }} // Tentukan tinggi tetap
           >
             {titles.title3}
           </motion.h1>

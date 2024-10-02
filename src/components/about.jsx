@@ -110,7 +110,7 @@ export default function About() {
             variants={itemVariants}
           >
             <img
-              src="/assets/profile2.webp"
+              src="/assets/profile2.webp" // Use a single image
               alt="profile"
               className="z-1 mt-10"
               width="500"

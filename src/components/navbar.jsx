@@ -7,17 +7,24 @@ export default function Navbar({ navbarColor, logoSrc }) {
         {/* Logo on the left */}
         <div className={`items-center text-2xl font-bold ${navbarColor.text}`}>
           <a href="/">
-            <img src={logoSrc} alt="logo" className="h-10 sm:h-14 w-auto" /> {/* Responsive logo size */}
+            {/* Setel lebar dan tinggi yang jelas pada gambar logo */}
+            <img
+              src={logoSrc}
+              alt="logo"
+              width="112"  // Sesuaikan lebar logo, misal 112px untuk sm:h-14
+              height="56"  // Sesuaikan tinggi logo, misal 56px untuk h-10
+              className="h-10 sm:h-14 w-auto"
+            />
           </a>
         </div>
 
         {/* Navigation links and Let's Talk button on the right */}
-        <div className="flex items-center space-x-4 sm:space-x-8 font-bold"> {/* Adjusted spacing for smaller screens */}
+        <div className="flex items-center space-x-4 sm:space-x-8 font-bold">
           {/* Navigation links */}
           <div className={`hidden md:flex space-x-8 ${navbarColor.text}`}>
             <a href="#about" className="group relative hover:text-gray-700">
               <span>About</span>
-              <span className={`absolute bottom-0 left-0 h-[0.125em] w-0 bg-current rounded-full transition-all duration-300 ease-in-out group-hover:w-full`}></span> {/* Ensure it's visible */}
+              <span className={`absolute bottom-0 left-0 h-[0.125em] w-0 bg-current rounded-full transition-all duration-300 ease-in-out group-hover:w-full`}></span>
             </a>
             <a href="#services" className="group relative hover:text-gray-700">
               <span>Services</span>
