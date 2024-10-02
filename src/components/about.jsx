@@ -114,8 +114,7 @@ export default function About() {
               src="/assets/profile2.webp" // Use a single image
               alt="profile"
               className="z-1 mt-10"
-              width="1800"
-              height="2331"
+              
               
             />
           </motion.div>
